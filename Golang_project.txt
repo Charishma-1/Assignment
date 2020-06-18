@@ -1,0 +1,22 @@
+Package main
+
+import "fmt"
+import "net/http"
+import "io/ioutil"
+
+fun main(){
+
+
+res,err := http.Get("http://WWW.mocky.io/v2/5ecfd630320000f1aee3d64d")
+
+if err ! =nil{
+
+fmt.printf("failed %s\n",err)
+}
+else
+{
+data,_ :=ioutil.ReadAll(res.Body)
+
+fmt.println(string(data))
+}
+}
